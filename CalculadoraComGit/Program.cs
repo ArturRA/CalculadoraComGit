@@ -86,10 +86,10 @@
                         // TODO funcao subtracao
                         break;
                     case OperacoesMatematicas.MULTIPLICACAO:
-                        // TODO funcao multiplicao
+                        resultado = valor1 * valor2;
                         break;
                     case OperacoesMatematicas.DIVISAO:
-                        // TODO funcao divisao
+                        resultado = valor1 / valor2;
                         break;
                     case OperacoesMatematicas.VISUALIZAR:
                         listaDasOperacoes.ForEach(conta =>  Console.WriteLine(conta));
@@ -108,10 +108,10 @@
                         // TODO
                         break;
                     case OperacoesMatematicas.MULTIPLICACAO:
-                        // TODO
+                        simbolo = "*";
                         break;
                     case OperacoesMatematicas.DIVISAO:
-                        // TODO
+                        simbolo = "/";
                         break;
                 }
 
