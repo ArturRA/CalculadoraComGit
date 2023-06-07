@@ -47,43 +47,42 @@
                 if (operacao == OperacoesMatematicas.SAIR)
                     break;
 
+                if (operacao == OperacoesMatematicas.VISUALIZAR)
+                {
+                    listaDasOperacoes.ForEach(conta => Console.WriteLine(conta));
+                    Console.ReadLine();
+                    continue;
+                }
                 Console.Write("Digite o primeiro valor: ");
                 double valor1 = Convert.ToDouble(Console.ReadLine());
                 
                 double valor2;
 
-                if (operacao == OperacoesMatematicas.DIVISAO)
+                while (true)
                 {
-                    while (true)
+                    Console.Write("Digite o segundo valor: ");
+                    valor2 = Convert.ToDouble(Console.ReadLine());
+                    if (valor2 == 0 && operacao == OperacoesMatematicas.DIVISAO)
                     {
-                        Console.Write("Digite o segundo valor: ");
-                        valor2 = Convert.ToDouble(Console.ReadLine());
-                        if (valor2 == 0)
-                        {
-                            Console.WriteLine("Divisor não pode ser zero");
-                            Console.ReadLine();
-                            continue;
-                        }
-                        else
-                        {
-                            break;
-                        }
+                        Console.WriteLine("Divisor não pode ser zero");
+                        Console.ReadLine();
+                        continue;
+                    }
+                    else
+                    {
+                        break;
                     }
                 }
-
-                Console.Write("Digite o segundo valor: ");
-                valor2 = Convert.ToDouble(Console.ReadLine());
-
 
                 double resultado = 0;
 
                 switch (operacao)
                 {
                     case OperacoesMatematicas.SOMA:
-                        // TODO funcao soma
+                        resultado = valor1 + valor2;
                         break;
                     case OperacoesMatematicas.SUBTRACAO:
-                        // TODO funcao subtracao
+                        resultado = valor1 - valor2;
                         break;
                     case OperacoesMatematicas.MULTIPLICACAO:
                         resultado = valor1 * valor2;
@@ -91,10 +90,6 @@
                     case OperacoesMatematicas.DIVISAO:
                         resultado = valor1 / valor2;
                         break;
-                    case OperacoesMatematicas.VISUALIZAR:
-                        listaDasOperacoes.ForEach(conta =>  Console.WriteLine(conta));
-                        Console.ReadLine();
-                        continue;
                 }
 
                 string simbolo = "";
@@ -102,10 +97,10 @@
                 switch (operacao)
                 {
                     case OperacoesMatematicas.SOMA:
-                        // TODO
+                        simbolo = "+";
                         break;
                     case OperacoesMatematicas.SUBTRACAO:
-                        // TODO
+                        simbolo = "-";
                         break;
                     case OperacoesMatematicas.MULTIPLICACAO:
                         simbolo = "*";
